@@ -14,8 +14,10 @@ app.post('/gift', (req, res) => {
   // grab the parameters from the front-end here
   const body = req.body;
 
+  console.log('body', body.myName)
+
   // TODO: prove that a name is in the list 
-  const isInTheList = false;
+  const isInTheList = verifyProof(body.proof, body.myName, body.root);
   if(isInTheList) {
     res.send("You got a toy robot!");
   }
